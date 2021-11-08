@@ -1,8 +1,9 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_test/auth_service.dart';
-import 'homescreen.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+import 'auth_service.dart';
+import 'wrapper.dart';
 import 'loginscreen.dart';
 import 'registerscreen.dart';
 
@@ -15,11 +16,12 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [Provider<AuthService>(create: (_) => AuthService())],
+      providers: [
+        Provider<AuthService>(create: (_) => AuthService()),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         initialRoute: "/",
         debugShowCheckedModeBanner: false,
         routes: {
-          "/": (context) => const HomeScreen(),
+          "/": (context) => const Wrapper(),
           "/login": (context) => const LoginScreen(),
           "/register": (context) => const RegisterScreen(),
         },

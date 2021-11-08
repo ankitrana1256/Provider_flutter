@@ -1,10 +1,10 @@
-import 'package:provider_test/homescreen.dart';
-import 'package:provider_test/loginscreen.dart';
-
-import 'user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_test/auth_service.dart';
+
+import 'auth_service.dart';
+import 'homescreen.dart';
+import 'loginscreen.dart';
+import 'user_model.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({Key? key}) : super(key: key);
@@ -25,7 +25,6 @@ class Wrapper extends StatelessWidget {
             ),
           );
         }
-        ;
       },
     );
   }
